@@ -1,11 +1,18 @@
 {
   "name": "react-godfather",
-  "version": "1.0.0",
+  "version": "1.0.1-0",
   "main": "build/lib/index.js",
   "license": "MIT",
   "author": "kapolos",
-  "keywords": ["react", "state", "functional components"],
-  "files": ["build/", "src/lib/"],
+  "keywords": [
+    "react",
+    "state",
+    "functional components"
+  ],
+  "files": [
+    "build/",
+    "src/lib/"
+  ],
   "homepage": "https://github.com/kapolos/react-godfather",
   "repository": {
     "type": "git",
