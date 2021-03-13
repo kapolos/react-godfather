@@ -1,0 +1,40 @@
+{
+  "name": "react-godfather",
+  "version": "1.0.0",
+  "main": "build/lib/index.js",
+  "license": "MIT",
+  "author": "kapolos",
+  "keywords": ["react", "state", "functional components"],
+  "files": ["build/", "src/lib/"],
+  "homepage": "https://github.com/kapolos/react-godfather",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kapolos/react-godfather.git"
+  },
+  "scripts": {
+    "start": "start-storybook",
+    "test": "standard",
+    "build": "rm -rf ./build && npx babel src/ --ignore src/stories/ -d build"
+  },
+  "dependencies": {
+    "dequal": "2.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/preset-env": "7.13.10",
+    "@storybook/react": "^6",
+    "prop-types": "^15",
+    "react": ">=16.8",
+    "react-dom": ">=16.8",
+    "standard": "^16"
+  },
+  "peerDependencies": {
+    "react": ">=16.8",
+    "react-dom": ">=16.8"
+  },
+  "standard": {
+    "globals": [
+      "globalThis"
+    ]
+  }
+}
