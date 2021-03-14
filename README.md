@@ -128,7 +128,7 @@ The top-down "reading" of the code makes it natural to reason with it.
 
 React-godfather components have some differences from the standard React functional components.
 
-<img src="https://github.com/kapolos/react-godfather/blob/master/docs/screenshots/scribble1-unpacked.jpg?raw=true" width="560" alt="scribble1">
+<img src="https://github.com/kapolos/react-godfather/blob/main/docs/screenshots/scribble1-unpacked.jpg?raw=true" width="560" alt="scribble1">
 
 In this specific example, `remoteData` and `error` hold our local state. They are defined (along with the `fetchData`
 function) above the component's `return` call. Everything in this section of the component is executed once and stays
@@ -834,8 +834,8 @@ Maybe because I started with QBasic :) So this does scratch that itch.
 
 `react-godfather`'s only dependency is [dequal](https://github.com/lukeed/dequal). `dequal` boasts ~ 1.7 million ops per second for Object comparisons,
 which I guess is enough for almost every app out there that isn't aiming for 60 fps. 
-Plus, remember that `react-godfather` plays well with everything, so you can just skipp using it for that pesky 
-component that really has to squeeze out all thos nanoseconds of performance.
+Plus, remember that `react-godfather` plays well with everything, so you can just skip using it for that pesky 
+component that really has to squeeze out all those nanoseconds of performance.
 
 ### Is it still really a functional component?
 
@@ -845,12 +845,13 @@ Certainly bringing in data via `useState()` is phenomenologically "looking the p
 you still have code that takes your component, does some computations and replaces your variables with their
 proper values, based on externally kept state.
 
-React-godfather does the same but with a different implementation. The state still lives outside of your component.
+React-godfather does the same but with a different implementation. The state still lives outside your component.
 It is the Godfather function (which itself is a standard React functional component) that keeps track of 
 your component's state, using the magic of Async Generators. And when React wants to render you component,
 Godfather will make sure to pass your "stateless" code over to React, filled in with the proper values.
 
 In other words, your components don't actually keep state, it only **feels** like they do. 
+Which is the point of this whole exercise :innocent:
 Which is the point of this whole exercise :innocent:
 
 ## License
