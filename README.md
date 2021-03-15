@@ -1,6 +1,5 @@
 # React-Godfather
-
-"Look ma, no Hooks!"
+> "Look ma, no Hooks!"
 
 **React-Godfather aims to explore an alternative mental model for functional components.**
 It adds a thin layer between your shiny components and React, quietly instrumenting things behind the scenes - 
@@ -50,6 +49,7 @@ Here is what you get:
     * [But why?](#but-why)
     * [What about speed? Is it perhaps slow?](#what-about-speed-isnt-checking-for-deep-equality-slow)
     * [Is this still a functional component?](#is-it-still-really-a-functional-component)
+    * [How do I use the Context API?](#)
 * [License](#license)    
 
 
@@ -853,6 +853,12 @@ Godfather will make sure to pass your "stateless" code over to React, filled in 
 In other words, your components don't actually keep state, it only **feels** like they do. 
 Which is the point of this whole exercise :innocent:
 Which is the point of this whole exercise :innocent:
+
+### How do I integrate with the Context API?
+
+*(Thanks to Leonso Medina for bringing up the question!)*
+
+You can use the `.Consumer` context component as usual. See [this example](https://codesandbox.io/s/react-godfather-docs-demo-context-4k7dz) in the sandbox.
 
 ## License
 
