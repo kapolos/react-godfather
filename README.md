@@ -1,7 +1,7 @@
 # React-Godfather
 > "Look ma, no Hooks!"
 
-**React-Godfather aims to explore an alternative mental model for functional components.**
+**React-Godfather aims to explore an alternative mental model for function components.**
 It adds a thin layer between your shiny components and React, quietly instrumenting things behind the scenes - 
 and it wants to make you an offer you can't refuse.
 
@@ -48,7 +48,7 @@ Here is what you get:
 * [FAQ](#faq)
     * [But why?](#but-why)
     * [What about speed? Is it perhaps slow?](#what-about-speed-isnt-checking-for-deep-equality-slow)
-    * [Is this still a functional component?](#is-it-still-really-a-functional-component)
+    * [Is this still a function component?](#is-it-still-really-a-function-component)
     * [How do I use the Context API?](#)
 * [License](#license)    
 
@@ -126,7 +126,7 @@ The top-down "reading" of the code makes it natural to reason with it.
 
 ## Let's unpack it.
 
-React-godfather components have some differences from the standard React functional components.
+React-godfather components have some differences from the standard React function components.
 
 <img src="https://github.com/kapolos/react-godfather/blob/main/docs/screenshots/scribble1-unpacked.jpg?raw=true" width="560" alt="scribble1">
 
@@ -612,7 +612,7 @@ By wrapping your functions `withTick`, the code inside the render function becom
 
 ## Async generators
 
-The render function of a `react-godfather` functional component can be:
+The render function of a `react-godfather` function component can be:
 * A function
 * An async function (i.e. a function that returns a promise)
 * A generator function (i.e. a function that returns a Generator object)
@@ -762,7 +762,7 @@ const Foo = toC(() => {
 `(f, events = ['onClick'], opts)`
 
 | name | description |
-| f | your functional component |
+| f | your component |
 | events | the list events you want it to automatically react upon - defaults to `onClick`|
 | opts | a configuration object : `{ id :: String, stopPropagation :: Bool }` |
 
@@ -806,7 +806,7 @@ Straight from the source's ... mouth:
 
 ### But why?
 
-First let me state clearly that Hooks are technically awesome. Godfather is itself a functional component with Hooks. 
+First let me state clearly that Hooks are technically awesome. Godfather is itself a function component with Hooks. 
 And while conceptualizing and building `react-godfather`, I came to understand and appreciate some design decisions
 that the React team had to make - facing similar questions made me realize some of the clever answers they came up with.
 
@@ -836,23 +836,6 @@ Maybe because I started with QBasic :) So this does scratch that itch.
 which I guess is enough for almost every app out there that isn't aiming for 60 fps. 
 Plus, remember that `react-godfather` plays well with everything, so you can just skip using it for that pesky 
 component that really has to squeeze out all those nanoseconds of performance.
-
-### Is it still really a functional component?
-
-From React's perspective, the output of `toC` is a functional component.
-
-Certainly bringing in data via `useState()` is phenomenologically "looking the part" more. Under the hood 
-you still have code that takes your component, does some computations and replaces your variables with their
-proper values, based on externally kept state.
-
-React-godfather does the same but with a different implementation. The state still lives outside your component.
-It is the Godfather function (which itself is a standard React functional component) that keeps track of 
-your component's state, using the magic of Async Generators. And when React wants to render you component,
-Godfather will make sure to pass your "stateless" code over to React, filled in with the proper values.
-
-In other words, your components don't actually keep state, it only **feels** like they do. 
-Which is the point of this whole exercise :innocent:
-Which is the point of this whole exercise :innocent:
 
 ### How do I integrate with the Context API?
 
