@@ -92,7 +92,7 @@ export const Godfather = (
   }
 
   return (
-    <div {...getProps(events, handleEvent)}>
+    <div {...getProps(events, handleEvent)} className='react-godfather'>
       {generatorValue}
     </div>
   )
