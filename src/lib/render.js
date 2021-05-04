@@ -13,8 +13,13 @@ const render = async function * (payloadF) {
     if (!generator) {
       payloadProps = yield Promise.resolve(payloadF(payloadProps))
     } else {
-      const { value } = await generator.next(payloadProps)
+      const { value, done } = await generator.next(payloadProps)
       payloadProps = yield Promise.resolve(value)
+
+      // Rewind after user-provided generator `return` statement
+      if (done) {
+        generator = payloadF(payloadProps)
+      }
     }
   }
 }
