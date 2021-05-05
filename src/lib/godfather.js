@@ -14,13 +14,14 @@ const shouldRender = (props, prevProps) => !dequal(props, prevProps)
  * @param fc the functional component to manage
  * @param props the props to pass to the managed functional component
  * @param events the events we want to monitor
- * @param tocOpts configuration options : { id, stopPropagation }
+ * @param tocOpts configuration options : { id, stopPropagation, classnames }
  * @returns {JSX.Element}
  */
 export const Godfather = (
-  fc, props, events = [], tocOpts = { id: 'unnamed ToC', stopPropagation: false }
+  fc, props, events = [],
+  tocOpts = { id: 'unnamed ToC', stopPropagation: false, extraClass: null }
 ) => {
-  const { id, stopPropagation } = tocOpts
+  const { id, stopPropagation, extraClass } = tocOpts
   const gRef = useRef()
   const prevProps = usePrevious(props)
   const [generatorValue, setGeneratorValue] = useState()
@@ -92,7 +93,7 @@ export const Godfather = (
   }
 
   return (
-    <div {...getProps(events, handleEvent)} className='react-godfather'>
+    <div {...getProps(events, handleEvent)} className={`react-godfather ${extraClass}`}>
       {generatorValue}
     </div>
   )

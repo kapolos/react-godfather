@@ -48,7 +48,6 @@ Here is what you get:
 * [FAQ](#faq)
     * [But why?](#but-why)
     * [What about speed? Is it perhaps slow?](#what-about-speed-isnt-checking-for-deep-equality-slow)
-    * [Is this still a function component?](#is-it-still-really-a-function-component)
     * [How do I use the Context API?](#)
 * [License](#license)    
 
@@ -764,7 +763,7 @@ const Foo = toC(() => {
 | name | description |
 | f | your component |
 | events | the list events you want it to automatically react upon - defaults to `onClick`|
-| opts | a configuration object : `{ id :: String, stopPropagation :: Bool }` |
+| opts | a configuration object : `{ id :: String, stopPropagation :: Bool, extraClass :: String }` |
 
 #### What props does your component receive?
 
