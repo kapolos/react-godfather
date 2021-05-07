@@ -23,9 +23,7 @@
     "test": "standard",
     "build": "rm -rf ./build && npx babel src/ --ignore src/stories/ -d build"
   },
-  "dependencies": {
-    "dequal": "2.0.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.13.10",
     "@babel/preset-env": "7.13.10",
