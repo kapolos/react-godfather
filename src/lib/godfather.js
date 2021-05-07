@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { dequal } from 'dequal'
 
 import render from './render'
 import step from './step'
 import { logState, usePrevious } from './util'
+import { dequal } from './dequal'
 
 const getProps = (events, handleEvent) => Object.fromEntries(events.map(event => ([event, handleEvent])))
 const shouldRender = (props, prevProps) => !dequal(props, prevProps)

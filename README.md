@@ -831,7 +831,8 @@ Maybe because I started with QBasic :) So this does scratch that itch.
 
 ### What about speed? Isn't checking for deep equality slow?
 
-`react-godfather`'s only dependency is [dequal](https://github.com/lukeed/dequal). `dequal` boasts ~ 1.7 million ops per second for Object comparisons,
+`react-godfather`'s comparison is based off a custom fork of [dequal](https://github.com/lukeed/dequal). 
+`dequal` boasts ~ 1.7 million ops per second for Object comparisons,
 which I guess is enough for almost every app out there that isn't aiming for 60 fps. 
 Plus, remember that `react-godfather` plays well with everything, so you can just skip using it for that pesky 
 component that really has to squeeze out all those nanoseconds of performance.
