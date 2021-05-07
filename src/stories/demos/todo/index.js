@@ -122,5 +122,6 @@ const Demo = () => {
 
 export default toC(Demo, ['onSubmit', 'onClick'], {
   id: 'Todo Demo',
-  stopPropagation: false
+  stopPropagation: false,
+  extraClass: 'todoApp'
 })

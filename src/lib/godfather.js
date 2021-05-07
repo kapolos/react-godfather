@@ -19,7 +19,7 @@ const shouldRender = (props, prevProps) => !dequal(props, prevProps)
  */
 export const Godfather = (
   fc, props, events = [],
-  tocOpts = { id: 'unnamed ToC', stopPropagation: false, extraClass: null }
+  tocOpts = { id: 'unnamed ToC', stopPropagation: false, extraClass: undefined }
 ) => {
   const { id, stopPropagation, extraClass } = tocOpts
   const gRef = useRef()
@@ -93,7 +93,10 @@ export const Godfather = (
   }
 
   return (
-    <div {...getProps(events, handleEvent)} className={`react-godfather ${extraClass}`}>
+    <div
+      {...getProps(events, handleEvent)}
+      className={extraClass ? `react-godfather ${extraClass}` : 'react-godfather'}
+    >
       {generatorValue}
     </div>
   )
